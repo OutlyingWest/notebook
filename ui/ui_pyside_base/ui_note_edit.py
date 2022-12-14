@@ -80,8 +80,8 @@ class Ui_NoteEdit(object):
 
     def retranslateUi(self, NoteEdit):
         NoteEdit.setWindowTitle(QCoreApplication.translate("NoteEdit", u"Form", None))
-        self.HeaderNoteLabel.setText(QCoreApplication.translate("NoteEdit", u"\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a:", None))
-        self.BodyNoteLabel.setText(QCoreApplication.translate("NoteEdit", u"\u0422\u0435\u043a\u0441\u0442 \u0437\u0430\u043c\u0435\u0442\u043a\u0438:", None))
+        self.HeaderNoteLabel.setText(QCoreApplication.translate("NoteEdit", u"Title:", None))
+        self.BodyNoteLabel.setText(QCoreApplication.translate("NoteEdit", u"Note:", None))
         self.BodyNoteLineEdit.setHtml(QCoreApplication.translate("NoteEdit", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

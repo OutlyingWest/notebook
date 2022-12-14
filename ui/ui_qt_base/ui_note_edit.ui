@@ -22,7 +22,7 @@
    <item>
     <widget class="QLabel" name="HeaderNoteLabel">
      <property name="text">
-      <string>Заголовок:</string>
+      <string>Title:</string>
      </property>
     </widget>
    </item>
@@ -32,7 +32,7 @@
    <item>
     <widget class="QLabel" name="BodyNoteLabel">
      <property name="text">
-      <string>Текст заметки:</string>
+      <string>Note:</string>
      </property>
     </widget>
    </item>
