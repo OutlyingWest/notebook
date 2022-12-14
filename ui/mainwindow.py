@@ -4,6 +4,8 @@ from PySide6.QtWidgets import QMainWindow
 from ui.ui_pyside_base.ui_mainwindow import Ui_MainWindow
 
 
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
