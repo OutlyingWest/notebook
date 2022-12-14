@@ -27,7 +27,7 @@
     <item row="2" column="0">
      <layout class="QGridLayout" name="BodyMainGridLayout">
       <item row="0" column="2">
-       <widget class="QScrollArea" name="scrollAreaMain">
+       <widget class="QScrollArea" name="ScrollAreaMain">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -52,7 +52,7 @@
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
+         <enum>QFrame::Panel</enum>
         </property>
         <property name="widgetResizable">
          <bool>true</bool>
@@ -62,8 +62,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>371</width>
-           <height>326</height>
+           <width>378</width>
+           <height>339</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">

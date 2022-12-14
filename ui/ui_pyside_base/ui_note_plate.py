@@ -18,25 +18,25 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QPushButton, QSizePolicy,
     QWidget)
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        if not Form.objectName():
-            Form.setObjectName(u"Form")
-        Form.resize(479, 40)
+class Ui_NotePlate(object):
+    def setupUi(self, NotePlate):
+        if not NotePlate.objectName():
+            NotePlate.setObjectName(u"NotePlate")
+        NotePlate.resize(479, 40)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(40)
-        sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
-        Form.setSizePolicy(sizePolicy)
-        Form.setMinimumSize(QSize(200, 0))
-        Form.setMaximumSize(QSize(16777215, 40))
-        Form.setBaseSize(QSize(0, 40))
-        Form.setWindowOpacity(1.000000000000000)
-        self.horizontalLayout = QHBoxLayout(Form)
+        sizePolicy.setHeightForWidth(NotePlate.sizePolicy().hasHeightForWidth())
+        NotePlate.setSizePolicy(sizePolicy)
+        NotePlate.setMinimumSize(QSize(200, 0))
+        NotePlate.setMaximumSize(QSize(16777215, 40))
+        NotePlate.setBaseSize(QSize(0, 40))
+        NotePlate.setWindowOpacity(1.000000000000000)
+        self.horizontalLayout = QHBoxLayout(NotePlate)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.TitleButton = QPushButton(Form)
+        self.TitleButton = QPushButton(NotePlate)
         self.TitleButton.setObjectName(u"TitleButton")
         sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
@@ -51,7 +51,7 @@ class Ui_Form(object):
 
         self.horizontalLayout.addWidget(self.TitleButton)
 
-        self.DelButton = QPushButton(Form)
+        self.DelButton = QPushButton(NotePlate)
         self.DelButton.setObjectName(u"DelButton")
         sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy2.setHorizontalStretch(40)
@@ -68,14 +68,14 @@ class Ui_Form(object):
         self.horizontalLayout.addWidget(self.DelButton)
 
 
-        self.retranslateUi(Form)
+        self.retranslateUi(NotePlate)
 
-        QMetaObject.connectSlotsByName(Form)
+        QMetaObject.connectSlotsByName(NotePlate)
     # setupUi
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.TitleButton.setText(QCoreApplication.translate("Form", u"Title", None))
-        self.DelButton.setText(QCoreApplication.translate("Form", u"X", None))
+    def retranslateUi(self, NotePlate):
+        NotePlate.setWindowTitle(QCoreApplication.translate("NotePlate", u"Form", None))
+        self.TitleButton.setText(QCoreApplication.translate("NotePlate", u"Title", None))
+        self.DelButton.setText(QCoreApplication.translate("NotePlate", u"X", None))
     # retranslateUi
 
