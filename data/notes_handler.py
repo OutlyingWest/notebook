@@ -31,6 +31,9 @@ class NoteHandler:
     @classmethod
     def save_note(cls, note_id: int, note_text: dict):
         # Write note info to db
+        if not note_text:
+            note_text = {'title_text': '',
+                         'body_text': ''}
         sql_handler = SQLiteHandler('notes_data.db', DataPaths.db_path)
         sql_handler.insert_one_note(note_id, note_text['title_text'])
         sql_handler.close_connection()

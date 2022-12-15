@@ -48,7 +48,7 @@ class MainWindow(QMainWindow):
         # If note edit window exists in memory - delete it
         try:
             note_plate_widget.note_edit_window.deleteLater()
-        except ValueError:
+        except AttributeError:
             pass
         note_plate_widget.deleteLater()
 
@@ -59,7 +59,6 @@ class MainWindow(QMainWindow):
             note_text = note_plate_widget.note_text
             NoteHandler.save_note(note_id=note_id,
                                   note_text=note_text)
-
     def __restore_notes(self):
         restored_notes_ids = NotesRestoredData.exist_ids
         restored_max_id = NotesRestoredData.max_note_id

@@ -10,10 +10,10 @@ class NoteEditWindow(QWidget):
         super().__init__()
         self.ui = Ui_NoteEdit()
         self.ui.setupUi(self)
-        self.is_deleted = False
+        self.is_canceled = False
         self.note_text = {
-            'title_text': None,
-            'body_text': None}
+            'title_text': '',
+            'body_text': ''}
         self.ui.OkButton.clicked.connect(self.press_ok)
         self.ui.CancelButton.clicked.connect(self.press_cancel)
 
@@ -29,12 +29,13 @@ class NoteEditWindow(QWidget):
 
     @Slot()
     def press_cancel(self):
-        # Signal to note plate that note edit object was deleted
-        self.is_deleted = True
+        # Indication to note plate that note edit object was deleted
+        self.is_canceled = True
+        self.ui.HeaderNoteLineEdit.setText(self.note_text['title_text'])
+        self.ui.BodyNoteLineEdit.setText(self.note_text['body_text'])
         # Close window
-        self.close()
-        # Planning note edit window object deletion
-        self.deleteLater()
+        self.hide()
+
 
 
 

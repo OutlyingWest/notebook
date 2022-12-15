@@ -28,12 +28,17 @@ class NotePlateWidget(QWidget):
     def press_write_note(self):
         """ Open a note edit window """
         note_edit_widget = self.sender()
-        if not self.note_edit_window or self.note_edit_window.is_deleted:
+        if not self.note_edit_window:
             self.note_edit_window = NoteEditWindow()
             # Get empty note text dictionary
             self.note_text = self.note_edit_window.note_text
             # Create signal connection
             self.note_edit_window.ok_signal.connect(self.update_note)
+            # Show edit window
+            self.note_edit_window.show()
+        elif self.note_edit_window.is_canceled:
+            # Get empty note text dictionary
+            self.note_text = self.note_edit_window.note_text
             # Show edit window
             self.note_edit_window.show()
 
