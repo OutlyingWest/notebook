@@ -14,10 +14,12 @@ class NotePlateWidget(QWidget):
         self.ui = Ui_NotePlate()
         self.ui.setupUi(self)
         self.id_widget = id_widget
-        # Set title to note plate in scrolling area
+        # Set default title to note plate in scrolling area
         self.ui.TitleButton.setText("New Note")
         # Object of note edit modal window
         self.note_edit_window = None
+        # Note text dict
+        self.note_text = {}
         # Connections to buttons on plate
         self.ui.TitleButton.clicked.connect(self.press_write_note)
         self.ui.DelButton.clicked.connect(self.press_del)
@@ -28,7 +30,11 @@ class NotePlateWidget(QWidget):
         note_edit_widget = self.sender()
         if not self.note_edit_window or self.note_edit_window.is_deleted:
             self.note_edit_window = NoteEditWindow()
-            self.note_edit_window.ok_signal.connect(self.update_title)
+            # Get empty note text dictionary
+            self.note_text = self.note_edit_window.note_text
+            # Create signal connection
+            self.note_edit_window.ok_signal.connect(self.update_note)
+            # Show edit window
             self.note_edit_window.show()
 
         else:
@@ -39,7 +45,11 @@ class NotePlateWidget(QWidget):
         """ Handle a press on delete button on plate """
         self.delete.emit(self.id_widget)
 
-    @Slot(str)
-    def update_title(self, new_title: str):
+    @Slot(dict)
+    def update_note(self, note_text: dict):
+        new_title = note_text['title_text']
         if new_title:
             self.ui.TitleButton.setText(new_title)
+
+        self.note_text = note_text
+
