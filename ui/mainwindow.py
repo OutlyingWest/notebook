@@ -43,7 +43,13 @@ class MainWindow(QMainWindow):
             print(f'note_plate_widget with id: {npw_id} does not exist')
         note_plate_widget = self.sender()
         self.ui.BodyVerticalLayout.removeWidget(note_plate_widget)
-
+        # Delete note from ROM
+        NoteHandler.delete_note(npw_id)
+        # If note edit window exists in memory - delete it
+        try:
+            note_plate_widget.note_edit_window.deleteLater()
+        except ValueError:
+            pass
         note_plate_widget.deleteLater()
 
     @Slot()

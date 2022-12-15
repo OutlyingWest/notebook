@@ -55,14 +55,12 @@ class SQLiteHandler:
     def get_max_note_id(self):
         select_query = self.cur.execute("""SELECT MAX(id) FROM notes""")
         note_max_id = select_query.fetchone()[0]
-        print(note_max_id)
         return note_max_id
 
     def get_note_ids(self):
         select_query = self.cur.execute("""SELECT id FROM notes""")
         note_ids = select_query.fetchall()
         note_ids = [note_id[0] for note_id in note_ids]
-        print(note_ids)
         return note_ids
 
 

@@ -39,9 +39,9 @@ class NoteHandler:
     @classmethod
     def get_note(cls, note_id):
         sql_handler = SQLiteHandler('notes_data.db', DataPaths.db_path)
-        file_handler = NoteFileHandler(note_id, file_path=DataPaths.notes_text_path)
         note_header = sql_handler.get_one_note(note_id)
-        # sql_handler.close_connection()
+        sql_handler.close_connection()
+        file_handler = NoteFileHandler(note_id, file_path=DataPaths.notes_text_path)
         note_body = file_handler.read_note_from_file()
         note_data = {
             'title_text': note_header,
@@ -51,6 +51,12 @@ class NoteHandler:
 
     @classmethod
     def delete_note(cls, note_id):
-        pass
+        sql_handler = SQLiteHandler('notes_data.db', DataPaths.db_path)
+        sql_handler.delete_one_note(note_id)
+        sql_handler.close_connection()
+        file_handler = NoteFileHandler(note_id, file_path=DataPaths.notes_text_path)
+        file_handler.delete_note_file()
+
+
 
 

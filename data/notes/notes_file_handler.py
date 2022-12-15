@@ -24,6 +24,7 @@ class NoteFileHandler:
 
 
 if __name__ == "__main__":
+    # Tests
     string = 'as;kdfj;kasd\nsasdfk\nsdafsdfffff'
     nfh = NoteFileHandler(3, file_path=r"C:\Users\px\PycharmProjects\notebook\data\notes\\")
     print(nfh.read_note_from_file())
