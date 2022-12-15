@@ -15,7 +15,7 @@ class NotePlateWidget(QWidget):
         self.ui.setupUi(self)
         self.id_widget = id_widget
         # Set title to note plate in scrolling area
-        self.ui.TitleButton.setText("My title")
+        self.ui.TitleButton.setText("New Note")
         # Object of note edit modal window
         self.note_edit_window = None
         # Connections to buttons on plate

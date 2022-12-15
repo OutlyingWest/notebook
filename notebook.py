@@ -15,7 +15,6 @@ def main():
     # window_ne.show()
     # window_np.show()
     main_window.show()
-
     sys.exit(app.exec())
 
 
