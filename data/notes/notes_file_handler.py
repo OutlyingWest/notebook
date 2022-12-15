@@ -20,7 +20,7 @@ class NoteFileHandler:
         if os.path.isfile(f'{self.save_path}{self.id}.txt'):
             os.remove(f'{self.save_path}{self.id}.txt')
         else:
-            print(f'note with id: {self.id} does not exist')
+            print(f'File of note with id: {self.id} does not exist')
 
 
 if __name__ == "__main__":

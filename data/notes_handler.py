@@ -31,15 +31,18 @@ class NoteHandler:
     @classmethod
     def save_note(cls, note_id: int, note_text: dict):
         # Write note info to db
-        if not note_text:
-            note_text = {'title_text': '',
-                         'body_text': ''}
+        # if not note_text:
+        #     note_text = {'title_text': '',
+        #                  'body_text': ''}
         sql_handler = SQLiteHandler('notes_data.db', DataPaths.db_path)
-        sql_handler.insert_one_note(note_id, note_text['title_text'])
-        sql_handler.close_connection()
-        # Write note body text to text file
-        file_handler = NoteFileHandler(note_id, note_text['body_text'], DataPaths.notes_text_path)
-        file_handler.save_note_to_file()
+        try:
+            sql_handler.insert_one_note(note_id, note_text['title_text'])
+            sql_handler.close_connection()
+            # Write note body text to text file
+            file_handler = NoteFileHandler(note_id, note_text['body_text'], DataPaths.notes_text_path)
+            file_handler.save_note_to_file()
+        except KeyError:
+            print(f'Empty note with id: {note_id} tried to save')
 
     @classmethod
     def get_note(cls, note_id):
