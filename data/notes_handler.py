@@ -24,6 +24,7 @@ def load_notes_data():
     sql_handler = SQLiteHandler('notes_data.db', DataPaths.db_path)
     NotesRestoredData.exist_ids = sql_handler.get_note_ids()
     NotesRestoredData.max_note_id = sql_handler.get_max_note_id()
+    sql_handler.close_connection()
 
 
 class NoteHandler:
@@ -32,6 +33,7 @@ class NoteHandler:
         # Write note info to db
         sql_handler = SQLiteHandler('notes_data.db', DataPaths.db_path)
         sql_handler.insert_one_note(note_id, note_text['title_text'])
+        sql_handler.close_connection()
         # Write note body text to text file
         file_handler = NoteFileHandler(note_id, note_text['body_text'], DataPaths.notes_text_path)
         file_handler.save_note_to_file()
