@@ -1,7 +1,38 @@
-Installation guide for Windows
-1. Go to root  project directory.
-2. Activate virtual environment. Use command:
+<style>
+p{
+    margin-left:18px;
+}
+</style>
+<h3>
+    Installation guide for Windows
+</h3>
+<h4>
+    1. Go to root project directory.
+</h4>
+<h4>
+    2. Run powershell.
+</h4>
+<h4>
+    3. Create virtual environment. Use command:
+</h4>
+<p>
+    py -m venv venv
+</p>
+<h4>
+    4. Activate virtual environment. Use command:
+</h4>
+<p>
     .\venv\Scripts\activate.ps1
-3. Install dependencies. Use command:
-    pip install -m .\requirements.txt
-4. To run program, use command: .\notebook.py
+</p>
+<h4>
+    5. Install dependencies. Use command:
+</h4>
+<p>
+    pip install -r .\requirements.txt
+</p>
+<h4>
+    6. To run program, use command:
+</h4>
+<p>
+    py -m notebook
+</p>
